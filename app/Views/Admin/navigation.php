@@ -47,7 +47,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="overview.php"><i class="fa fa-users fa-fw"></i> Team members</a>
+                            <a href="<?php echo BASE_URL ?>admin"><i class="fa fa-users fa-fw"></i> Team members</a>
                         </li>
                         <li>
                             <a href="products.php"><i class="fa fa-file fa-fw"></i> Projects</a>

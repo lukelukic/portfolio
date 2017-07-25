@@ -28,7 +28,7 @@
 
             <!-- Forma za dodavanje novog korisnika, prikazuje se uvek osim ako je prosledjen edit parametar -->
               <p class="lead">New team members</p>
-            <form method="post" action="<?php echo BASE_URL;?>/admin/add">
+            <form method="post" action="<?php echo BASE_URL;?>admin/add">
               <p><strong>First name :</strong></p>
               <div class="form-group">
                 <input type="text" name="tbFirstName" value="" class="form-control">
