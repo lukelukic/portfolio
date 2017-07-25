@@ -50,7 +50,7 @@
                             <a href="<?php echo BASE_URL ?>admin"><i class="fa fa-users fa-fw"></i> Team members</a>
                         </li>
                         <li>
-                            <a href="products.php"><i class="fa fa-file fa-fw"></i> Projects</a>
+                            <a href="<?php echo BASE_URL ?>admin/projects"><i class="fa fa-file fa-fw"></i> Projects</a>
                         </li>
                     </ul>
                 </div>
