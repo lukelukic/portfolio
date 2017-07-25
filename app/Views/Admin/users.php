@@ -35,9 +35,9 @@
 
             <!-- Forma za dodavanje novog korisnika, prikazuje se uvek osim ako je prosledjen edit parametar -->
               <p class="lead">New team members</p>
-            <form method="post" action="<?php echo BASE_URL;?>admin/addMember">
+            <form method="post" action="<?php echo BASE_URL;?>admin/addMember" enctype="multipart/form-data">
               <div class="form-group">
-                <input type="text" name="tbFirstName" value="" class="form-control" placeholder="First Name">
+                <input type="text" name="tbFirstName" value="" class="form-control" placeholder="First Name" >
               </div>
               <div class="form-group">
                 <input type="text" name="tbLastName" value="" class="form-control" placeholder="Last Name">
@@ -65,9 +65,12 @@
                 <input type="text" name="tbAlt" value="" class="form-control" placeholder="Alt Attribute">
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary" name="btnSubmit" value="Add member" class="form-control">
+                <input type="submit" class="btn btn-primary" name="btnSubmit" value="Add member" class="form-control" id="formSubmit">
               </div>
             </form>
+            <div id="feedback">
+
+            </div>
         </div>
      </div>
     </div>
@@ -85,6 +88,9 @@
     <script src="<?php echo BASE_URL; ?>vendor/components/bootstrap/js/bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo BASE_URL; ?>files/js/sb-admin-2.js"></script>
+    <script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/check.js">
+
+    </script>
 </body>
 
 
