@@ -47,16 +47,10 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="overview.php"><i class="fa fa-dashboard fa-fw"></i> Analitika</a>
+                            <a href="overview.php"><i class="fa fa-users fa-fw"></i> Analitika</a>
                         </li>
                         <li>
-                            <a href="products.php"><i class="fa fa-circle fa-fw"></i> Proizvodi</a>
-                        </li>
-                        <li>
-                            <a href="users.php"><i class="fa fa-users fa-fw"></i> Korisnici</a>
-                        </li>
-                        <li>
-                            <a href="mail.php"><i class="fa fa-envelope fa-fw"></i> Upiti</a>
+                            <a href="products.php"><i class="fa fa-file fa-fw"></i> Projects</a>
                         </li>
                     </ul>
                 </div>
