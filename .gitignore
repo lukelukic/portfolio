@@ -1,2 +1,2 @@
-system/
-vendor/
+system/*
+vendor/*
