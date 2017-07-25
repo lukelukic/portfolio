@@ -13,10 +13,17 @@
 					<table class="table table-hover table-striped table-bordered">
              <tr>
                <th>#</th>
-               <th>Korisnicko ime</th>
-               <th>Email</th>
-               <th>Izmeni</th>
-               <th>Obrisi</th>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Position</th>
+               <th>LinkedIn</th>
+               <th>Facebook</th>
+               <th>Twitter</th>
+               <th>Instagram</th>
+               <th>Picture</th>
+               <th>Alt Attribute</th>
+               <th>Modify</th>
+               <th>Delete</th>
              </tr>
 					</table>
 				</div>
@@ -29,41 +36,33 @@
             <!-- Forma za dodavanje novog korisnika, prikazuje se uvek osim ako je prosledjen edit parametar -->
               <p class="lead">New team members</p>
             <form method="post" action="<?php echo BASE_URL;?>admin/addMember">
-              <p><strong>First name :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbFirstName" value="" class="form-control">
+                <input type="text" name="tbFirstName" value="" class="form-control" placeholder="First Name">
               </div>
-              <p><strong>Last name :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbLastName" value="" class="form-control">
+                <input type="text" name="tbLastName" value="" class="form-control" placeholder="Last Name">
               </div>
-              <p><strong>Position :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbPosition" value="" class="form-control">
+                <input type="text" name="tbPosition" value="" class="form-control" placeholder="Position">
               </div>
-              <p><strong>LinkedIn :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbLinkedIn" value="" class="form-control">
+                <input type="text" name="tbLinkedIn" value="" class="form-control" placeholder="LinkedIn">
               </div>
-              <p><strong>Facebook :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbFacebook" value="" class="form-control">
+                <input type="text" name="tbFacebook" value="" class="form-control" placeholder="Facebook">
               </div>
-              <p><strong>Twitter :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbTwitter" value="" class="form-control">
+                <input type="text" name="tbTwitter" value="" class="form-control" placeholder="Twitter">
               </div>
-              <p><strong>Instagram :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbInstagram" value="" class="form-control">
+                <input type="text" name="tbInstagram" value="" class="form-control" placeholder="Instagram">
               </div>
               <p><strong>Picture :</strong></p>
               <div class="form-group">
                 <input type="file" name="tbPicture" value="" class="form-control">
               </div>
-              <p><strong>Alt attribute :</strong></p>
               <div class="form-group">
-                <input type="text" name="tbAlt" value="" class="form-control">
+                <input type="text" name="tbAlt" value="" class="form-control" placeholder="Alt Attribute">
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-primary" name="btnSubmit" value="Add member" class="form-control">
