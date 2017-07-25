@@ -53,9 +53,14 @@ window.onload = function(){
          errors.push("Invalid Instagram format.");
        }
      }
-     if(!rePicture.test(picture)){
-       errors.push("Invalid Picture format.");
+     if(picture){
+       if(!rePicture.test(picture)){
+         errors.push("Invalid Picture format.");
+       }
+     }else {
+       errors.push("Picture field is rquired.");
      }
+
      if(!reAlt.test(alt)){
        errors.push("Invalid Alt Attribute format.");
      }
