@@ -11,7 +11,7 @@ class Team_Members_Collection extends sys\DbCollection
         $team_members = $db->executeQuery($selectQuery);
         if ($team_members) {
             foreach ($team_members as $tm) {
-                $team_member = new Team_member();
+                $team_member = new Team_Member();
                 $team_member->id = $tm['id'];
                 $team_member->firstName = $tm['first_name'];
                 $team_member->lastName = $tm['last_name'];
