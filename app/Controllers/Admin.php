@@ -11,9 +11,11 @@ class Admin extends sys\MainController
     {
         $tm = new Models\Team_Member();
         $coll = new Models\Team_Members_Collection();
-
+        $db = new sys\Libraries\Database();
+        $coll->selectItemsFromDb($db,"SELECT * FROM team_members;");
+        $data['team_members'] = $coll->getItems();
         $this->loadView("Admin/navigation");
-        $this->loadView("Admin/users");
+        $this->loadView("Admin/users",$data);
     }
 
     public function addMember()
@@ -55,28 +57,28 @@ class Admin extends sys\MainController
             $team_member = new Models\Team_Member();
             $team_member->firstName = $_REQUEST['tbFirstName'];
             $team_member->lastName = $_REQUEST['tbLastName'];
-            $team_member->Position = $_REQUEST['tbPosition'];
-            $team_member->Picture = $_FILES['tbPicture']['name'];
+            $team_member->position = $_REQUEST['tbPosition'];
+            $team_member->picture = $_FILES['tbPicture']['name'];
             $team_member->alt = $_REQUEST['tbAlt'];
 
             if ($_REQUEST['tbTwitter']) {
                 $validation->checkRegex('/^[A-Za-z0-9_]{1,15}$/', $_REQUEST['tbTwitter'], "Invalid Twitter username format.");
-                $team_member->Twitter = $_REQUEST['tbTwitter'];
+                $team_member->twitter = $_REQUEST['tbTwitter'];
             }
 
             if ($_REQUEST['tbFacebook']) {
                 $validation->checkRegex('/^[a-z\d.]{5,}$/i', $_REQUEST['tbFacebook'], "Invalid Facebook username format.");
-                $team_member->Facebook = $_REQUEST['tbFacebook'];
+                $team_member->facebook = $_REQUEST['tbFacebook'];
             }
 
             if ($_REQUEST['tbInstagram']) {
                 $validation->checkRegex('/^[a-zA-Z0-9._]+$/', $_REQUEST['tbInstagram'], "Invalid Instagram username format.");
-                $team_member->Instagram = $_REQUEST['tbInstagram'];
+                $team_member->instagram = $_REQUEST['tbInstagram'];
             }
 
             if ($_REQUEST['tbLinkedIn']) {
                 $validation->checkRegex('/^[a-z\d.]{5,}$/i', $_REQUEST['tbLinkedIn'], "Invalid LinkedIn username format.");
-                $team_member->LinkedIn = $_REQUEST['tbLinkedIn'];
+                $team_member->linkedIn = $_REQUEST['tbLinkedIn'];
             }
 
             $validation->checkRegex("/^[A-z0-9\_\-]{2,25}(\s[A-z0-9\_\-]{2,25})*$/", $_REQUEST['tbAlt'], "Invalid picture alt format");
@@ -84,7 +86,8 @@ class Admin extends sys\MainController
             $validation->checkCommonBatch($validationData);
 
             if (!$validation->isValid()) {
-                var_dump($validation->getErrorMessages());
+                $_SESSION['flash']['errors'] = $validation->getErrorMessages();
+                redirect('admin');
             } else {
                 $fupload = new sys\Libraries\FileUpload();
                 $fupload->fileTypes = array('image/png', 'image/jpeg', 'image/gif');
@@ -92,9 +95,17 @@ class Admin extends sys\MainController
                 $fupload->uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . "/portfolio/files/images";
 
                 if ($fupload->upload()) {
-                    echo "Uspesan upload";
+                    $db = new sys\Libraries\Database();
+                    if($team_member->insertIntoDb($db)) {
+                        $_SESSION['flash']['success'] = "Member successfully added!";
+                        redirect('admin');
+                    } else {
+
+                    }
+
                 } else {
-                    
+                    $_SESSION['flash']['errors'] = $fupload->getErrorMessages();
+                    redirect("admin");
                 }
             }
         } else {

@@ -25,6 +25,25 @@
                <th>Modify</th>
                <th>Delete</th>
              </tr>
+             <?php if(isset($team_members)): ?>
+               <?php $rb=1; ?>
+               <?php foreach($team_members as $member): ?>
+                 <tr>
+                   <td><?php echo $rb++; ?></td>
+                   <td><?php echo $member->firstName; ?></td>
+                   <td><?php echo $member->lastName; ?></td>
+                   <td><?php echo $member->position; ?></td>
+                   <td><?php echo $member->linkedIn ? $member->linkedIn : "/"; ?></td>
+                   <td><?php echo $member->facebook ? $member->facebook : "/"; ?></td>
+                   <td><?php echo $member->twitter ? $member->twitter : "/"; ?></td>
+                   <td><?php echo $member->instagram ? $member->instagram : "/"; ?></td>
+                   <td><?php echo $member->picture; ?></td>
+                   <td><?php echo $member->alt; ?></td>
+                   <td><a href="<?php echo BASE_URL; ?>admin/memberEdit/<?php echo $member->id; ?>" class='btn btn-warning btn-sm'>Edit</a></td>
+                   <td><a href="<?php echo BASE_URL; ?>admin/memberDelete/<?php echo $member->id; ?>" class='btn btn-danger btn-sm'>Delete</a></td>
+                 </tr>
+               <?php endforeach; ?>
+             <?php endif; ?>
 					</table>
 				</div>
             <!-- /.row -->
@@ -68,9 +87,27 @@
                 <input type="submit" class="btn btn-primary" name="btnSubmit" value="Add member" class="form-control" id="formSubmit">
               </div>
             </form>
-            <div id="feedback" class="alert alert-danger hidden">
+
+            <div id="feedback" class="hidden alert alert-danger ">
 
             </div>
+
+
+
+              <?php if(isset($_SESSION['success'])): ?>
+                <div class="alert alert-success alert-dismissible">
+                <?php echo $_SESSION['success']; ?>
+                </div>
+              <?php endif; ?>
+
+              <?php if(isset($_SESSION['errors'])): ?>
+                <div class="alert alert-danger alert-dismissible">
+                <?php foreach($_SESSION['errors'] as $err): ?>
+                  <?php echo $err . "</br>"; ?>
+                <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
+
         </div>
      </div>
     </div>

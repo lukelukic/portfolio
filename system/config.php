@@ -22,9 +22,17 @@ function redirect($path)
 {
     header("Location: " . BASE_URL . $path);
 }
-session_start();
 
-$flashCount = 0;
+
+/*---------------------Obrada flash promenljive ---------------*/
+session_start();
 if (isset($_SESSION['flash'])) {
-    $flashCount>1? session_unset($_SESSION['flash']) : $flashCount++;
+    foreach ($_SESSION['flash'] as $key => $value) {
+        $_SESSION[$key] = $value;
+    }
+    if (isset($_SESSION['removeFlash'])) {
+        session_unset($_SESSION['flash']);
+    } else {
+        $_SESSION['removeFlash'] = true;
+    }
 }

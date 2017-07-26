@@ -23,7 +23,7 @@ class Team_Member implements sys\Interfaces\IDbItem
                   linkedin,facebook,twitter,instagram,picture,picture_alt)
                   VALUES ('$this->firstName','$this->lastName', '$this->position',
                   '$this->linkedIn', '$this->facebook', '$this->twitter',
-                  '$this->instagram', '$this->picture', '$this->picture_alt');";
+                  '$this->instagram', '$this->picture', '$this->alt');";
         return $db->executeQuery($query);
     }
     public function deleteFromDb(sys\Libraries\Database $db)

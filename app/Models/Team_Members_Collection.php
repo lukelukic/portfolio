@@ -9,11 +9,12 @@ class Team_Members_Collection extends sys\DbCollection
     public function selectItemsFromDb(sys\Libraries\Database $db, $selectQuery)
     {
         $team_members = $db->executeQuery($selectQuery);
-        if ($data) {
+        if ($team_members) {
             foreach ($team_members as $tm) {
                 $team_member = new Team_member();
                 $team_member->id = $tm['id'];
-                $team_member->firstName = $tm['firstName'];
+                $team_member->firstName = $tm['first_name'];
+                $team_member->lastName = $tm['last_name'];
                 $team_member->position = $tm['position'];
                 $team_member->facebook = $tm['facebook'];
                 $team_member->instagram = $tm['instagram'];

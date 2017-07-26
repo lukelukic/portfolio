@@ -12,7 +12,7 @@ namespace portfolio\system\Libraries;
 class Database
 {
     private $host = "localhost";
-    private $database = "oop";
+    private $database = "portfolio";
     private $user = "root";
     private $password = "root";
     private static $instance;
