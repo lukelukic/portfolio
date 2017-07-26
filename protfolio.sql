@@ -34,7 +34,7 @@ CREATE TABLE `team_members` (
   `picture` varchar(150) CHARACTER SET utf8 NOT NULL,
   `picture_alt` varchar(100) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `team_members` (
 
 LOCK TABLES `team_members` WRITE;
 /*!40000 ALTER TABLE `team_members` DISABLE KEYS */;
+INSERT INTO `team_members` VALUES (4,'Lazar','Komlenski','Rumun','','lazar.komlenski','','comlenkoo','komlen.jpg','lazar komlen komlenski'),(5,'Nemanja','Lukic','Floor Manager','','nexlukic','','nexlukic','403.png','Neco pisonja'),(6,'Luka','Lukic','Ceosefina','lukelukic','lukelukic','','lukelukic','404.png','luke ceo list'),(7,'Strahinja','Sujic','Gejmer','lukelukic','lukelukic','quayspwn','','NEXIMON.png','sujo nisanidzija');
 /*!40000 ALTER TABLE `team_members` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-25 18:40:59
+-- Dump completed on 2017-07-26  2:22:50
