@@ -7,7 +7,9 @@ use portfolio\app\Models as Models;
 
 class Admin extends sys\MainController
 {
-    public function index()
+
+
+    public function index($data = null)
     {
         $tm = new Models\Team_Member();
         $coll = new Models\Team_Members_Collection();
@@ -16,6 +18,20 @@ class Admin extends sys\MainController
         $data['team_members'] = $coll->getItems();
         $this->loadView("Admin/navigation");
         $this->loadView("Admin/users",$data);
+    }
+
+    public function editMember()
+    {
+          if(isset($_REQUEST['id'])) {
+              $col = new Models\Team_Members_Collection();
+              $db = new sys\Libraries\Database();
+              $query = "SELECT * FROM team_members WHERE id = " . $_REQUEST['id'] . ";";
+              $col->selectItemsFromDb($db,$query);
+              $data['member'] = $col->getItems();
+              count($data['member']) ? $this->index($data) : redirect("admin");
+          } else {
+              redirect("admin");
+          }
     }
 
     public function addMember()
