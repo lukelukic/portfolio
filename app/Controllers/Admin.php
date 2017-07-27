@@ -18,6 +18,14 @@ class Admin extends sys\MainController
         $this->loadView("Admin/users", $data);
     }
 
+    //Stranica za administriranje projekata
+    public function projects($data = null)
+    {
+        $this->loadView("Admin/navigation");
+        $this->loadView("Admin/users", $data);
+    }
+
+    //Brisanje clana tima
     public function deleteMember()
     {
         if (isset($_REQUEST['id'])) {
@@ -45,7 +53,7 @@ class Admin extends sys\MainController
             redirect("admin");
         }
     }
-
+    //Potvrda izmene clana tima
     public function doEdit()
     {
         if (isset($_REQUEST['btnSubmit'])) {
@@ -147,7 +155,7 @@ class Admin extends sys\MainController
             redirect("admin");
         }
     }
-
+    //Prosledjivanje podataka za edit
     public function editMember()
     {
         if (isset($_REQUEST['id'])) {
@@ -162,6 +170,7 @@ class Admin extends sys\MainController
         }
     }
 
+    //Dodavanje clana tima
     public function addMember()
     {
         if (isset($_REQUEST['btnSubmit'])) {
