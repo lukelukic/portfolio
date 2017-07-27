@@ -34,12 +34,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="overview.php">Admin panel</a>
+                <a class="navbar-brand" href="<?php echo BASE_URL;?>admin">Admin panel</a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-              <li><a href="../index.php"><strong>Povratak na sajt</strong></a></li>
+              <li><a href="<?php echo BASE_URL;?>"><strong>Povratak na sajt</strong></a></li>
             </ul>
             <!-- /.navbar-top-links -->
 

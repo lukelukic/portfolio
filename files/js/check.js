@@ -53,13 +53,17 @@ window.onload = function(){
          errors.push("Invalid Instagram format.");
        }
      }
+     if (!document.getElementById("nema")) {
      if(picture){
        if(!rePicture.test(picture)){
          errors.push("Invalid Picture format.");
        }
      }else {
-       errors.push("Picture field is rquired.");
+       errors.push("Picture field is required.");
      }
+   }else {
+     alert($("#nema").val());
+   }
 
      if(!reAlt.test(alt)){
        errors.push("Invalid Alt Attribute format.");
