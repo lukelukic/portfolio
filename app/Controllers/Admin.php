@@ -22,7 +22,7 @@ class Admin extends sys\MainController
     public function projects($data = null)
     {
         $this->loadView("Admin/navigation");
-        $this->loadView("Admin/users", $data);
+        $this->loadView("Admin/projects", $data);
     }
 
     //Brisanje clana tima
