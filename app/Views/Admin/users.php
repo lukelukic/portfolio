@@ -67,6 +67,7 @@
             <!-- Forma za dodavanje novog korisnika, prikazuje se uvek osim ako je prosledjen edit parametar -->
 
             <?php if(isset($member)): ?>
+              <?php var_dump($member); ?>
               <p class="lead">Edit team member</p>
             <form method="post" action="<?php echo BASE_URL;?>admin/doEdit" enctype="multipart/form-data">
               <div class="form-group">
@@ -92,11 +93,12 @@
               </div>
               <p><strong>Picture :</strong></p>
               <div class="form-group">
-                <input type="file" name="tbPicture" value="" class="form-control" id="tbPicture">
+                <input type="file" name="tbPicture" value="<?php echo $member->picture; ?>" class="form-control" id="tbPicture">
               </div>
               <div class="form-group">
                 <input type="text" name="tbAlt" value="<?php echo $member->alt; ?>" class="form-control" placeholder="Alt Attribute" id="tbAlt">
               </div>
+              <input type="hidden" name="" value="<?php echo $member->id; ?>">
               <div class="form-group">
                 <input type="submit" class="btn btn-warning" name="btnSubmit" value="Edit member" class="form-control" id="formSubmit">
               </div>
