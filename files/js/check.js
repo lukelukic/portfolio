@@ -34,6 +34,39 @@ window.onload = function() {
       errors.push("Invalid Position format.");
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+     if(linkedin){
+        if(!reLinkedIn.test(linkedin)) {
+         errors.push("Invalid LinkedIn format.");
+       }
+     }
+     if(facebook){
+        if(!reFacebook.test(facebook)) {
+         errors.push("Invalid Facebook format.");
+       }
+     }
+     if(twitter){
+        if(!reTwitter.test(twitter)) {
+         errors.push("Invalid Twitter format.");
+       }
+     }
+     if(instagram){
+        if(!reInstagram.test(instagram)) {
+         errors.push("Invalid Instagram format.");
+       }
+     }
+     if (!document.getElementById("nema")) {
+     if(picture){
+       if(!rePicture.test(picture)){
+         errors.push("Invalid Picture format.");
+       }
+     }else {
+       errors.push("Picture field is required.");
+     }
+   }
+=======
+>>>>>>> 32fdd8dfeec9bf17e0af92af10fc1f2945be51a9
     if (linkedin) {
       if (!reLinkedIn.test(linkedin)) {
         errors.push("Invalid LinkedIn format.");
@@ -64,6 +97,7 @@ window.onload = function() {
       }
     }
 
+<<<<<<< HEAD
 =======
      if(linkedin){
         if(!reLinkedIn.test(linkedin)) {
@@ -95,6 +129,9 @@ window.onload = function() {
      }
    }
 >>>>>>> b1dbbad4e172660f232395f4d59ec21d615b05aa
+=======
+>>>>>>> f6b1acc540b9c804d07dc7b7476864affb022017
+>>>>>>> 32fdd8dfeec9bf17e0af92af10fc1f2945be51a9
 
     if (!reAlt.test(alt)) {
       errors.push("Invalid Alt Attribute format.");
