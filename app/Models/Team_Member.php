@@ -33,11 +33,19 @@ class Team_Member implements sys\Interfaces\IDbItem
     }
     public function updateInDb(sys\Libraries\Database $db)
     {
-        $query = "UPDATE team_members set first_name = '$this->firstName',
-                  last_name = '$this->lastName', position = '$this->position',
-                  linkedin = '$this->linkedIn', facebook = '$this->facebook',
-                  twitter = '$this->twitter', instagram = '$this->instagram',
-                  picture = '$this->picture', picture_alt = '$this->picture_alt';";
+        if($this->picture) {
+          $query = "UPDATE team_members set first_name = '$this->firstName',
+                    last_name = '$this->lastName', position = '$this->position',
+                    linkedin = '$this->linkedIn', facebook = '$this->facebook',
+                    twitter = '$this->twitter', instagram = '$this->instagram',
+                    picture = '$this->picture', picture_alt = '$this->alt' WHERE id = $this->id;";
+        } else {
+          $query = "UPDATE team_members set first_name = '$this->firstName',
+                    last_name = '$this->lastName', position = '$this->position',
+                    linkedin = '$this->linkedIn', facebook = '$this->facebook',
+                    twitter = '$this->twitter', instagram = '$this->instagram',
+                    picture_alt = '$this->alt' WHERE id = $this->id;";
+        }
         return $db->executeQuery($query);
     }
 }
