@@ -20,6 +20,17 @@ class Admin extends sys\MainController
         $this->loadView("Admin/users",$data);
     }
 
+    public function deleteMember()
+    {
+        if(isset($_REQUEST['id']))
+        {
+            $member = new Models\Team_Member();
+            $member->id = $_REQUEST['id'];
+        } else {
+            redirect("admin");
+        }
+    }
+
     public function editMember()
     {
           if(isset($_REQUEST['id'])) {
@@ -27,7 +38,7 @@ class Admin extends sys\MainController
               $db = new sys\Libraries\Database();
               $query = "SELECT * FROM team_members WHERE id = " . $_REQUEST['id'] . ";";
               $col->selectItemsFromDb($db,$query);
-              $data['member'] = $col->getItems();
+              $data['member'] = $col->getItems()[0];
               count($data['member']) ? $this->index($data) : redirect("admin");
           } else {
               redirect("admin");
