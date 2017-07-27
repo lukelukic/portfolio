@@ -61,7 +61,7 @@ window.onload = function() {
       } else {
         errors.push("Picture field is required.");
       }
-    } 
+    }
 
 
     if (!reAlt.test(alt)) {
