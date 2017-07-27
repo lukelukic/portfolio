@@ -61,8 +61,6 @@ window.onload = function(){
      }else {
        errors.push("Picture field is required.");
      }
-   }else {
-     alert($("#nema").val());
    }
 
      if(!reAlt.test(alt)){
