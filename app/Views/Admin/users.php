@@ -92,12 +92,13 @@
               </div>
               <p><strong>Picture :</strong></p>
               <div class="form-group">
-                <input type="file" name="tbPicture" value="<?php echo $member->picture; ?>" class="form-control" id="tbPicture">
+                <input type="file" name="tbPicture" value="" class="form-control" id="tbPicture">
               </div>
               <div class="form-group">
                 <input type="text" name="tbAlt" value="<?php echo $member->alt; ?>" class="form-control" placeholder="Alt Attribute" id="tbAlt">
               </div>
               <input type="hidden" name="hiddenId" value="<?php echo $member->id; ?>" id="nema">
+              <input type="hidden" name="hiddenPicture" value="<?php echo $member->picture; ?>">
               <div class="form-group">
                 <input type="submit" class="btn btn-warning" name="btnSubmit" value="Edit member" class="form-control" id="formSubmit">
                 <a href="<?php echo BASE_URL;?>admin"><input type="button" name="" value="Cancel" class="btn btn-danger"></a>
