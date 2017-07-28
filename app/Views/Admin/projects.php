@@ -30,7 +30,7 @@
             <td><?php echo $wk->picture->file; ?></td>
             <td><?php echo $wk->picture->alt; ?></td>
             <td><a class='btn btn-sm btn-warning' href="<?php echo BASE_URL ?>admin/editProject?id=<?php echo $wk->id; ?>">Edit</a></td>
-            <td><a class='btn btn-sm btn-danger delete' href="<?php echo BASE_URL ?>admin/deleteProject?id=<?php echo $wk->id; ?>">Delete</a></td>
+            <td><a class='btn btn-sm btn-danger delete' href="<?php echo BASE_URL ?>admin/deleteProject?id=<?php echo $wk->id . "&picture=" . $wk->picture->file;?>">Delete</a></td>
          </tr>
        <?php endforeach; ?>
     </table>
