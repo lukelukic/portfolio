@@ -4,6 +4,7 @@ namespace portfolio\app\Controllers;
 
 use portfolio\system as sys;
 use portfolio\app\Models as Models;
+use portfolio\system\Libraries\Database as Db;
 
 class Admin extends sys\MainController
 {
@@ -21,8 +22,42 @@ class Admin extends sys\MainController
     //Stranica za administriranje projekata
     public function projects($data = null)
     {
+        $coll = new Models\Work_Collection();
+        $coll->selectAllFromDb(new Db());
+        $data['works'] = $coll->getItems();
+        var_dump($data['works']);
         $this->loadView("Admin/navigation");
         $this->loadView("Admin/projects", $data);
+    }
+
+    public function addProject()
+    {
+        if (isset($_REQUEST['btnSubmit'])) {
+            $work = new Models\Work();
+            $work->name = $_REQUEST['tbProjectName'];
+            $work->link = $_REQUEST['tbProjectLink'];
+            $work->picture = new Models\Picture();
+            $work->picture->file = $_FILES['tbProjectPicture']['name'];
+            $work->picture->alt = $_REQUEST['tbAlt'];
+
+            $fupload = new sys\Libraries\FileUpload();
+            $fupload->fileTypes = array('image/png', 'image/jpeg', 'image/gif');
+            $fupload->fileToUpload = $_FILES['tbProjectPicture'];
+            $fupload->uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . "/portfolio/files/images/projects";
+
+            if ($fupload->upload()) {
+                if ($work->insertIntoDb(new Db())) {
+                    $_SESSION['flash']['success'] = "Project successfully added.";
+                    redirect("admin/projects");
+                } else {
+                    echo "NESTO NE VALJDA ROKI.";
+                }
+            } else {
+                var_dump($fupload->getErrorMessages());
+            }
+        } else {
+            redirect("admin");
+        }
     }
 
     //Brisanje clana tima
