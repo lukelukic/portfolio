@@ -18,6 +18,7 @@ class Database
     private static $instance;
     private $conn = null;
     private $result = null;
+    private $insertedId = null;
 
     public function __construct()
     {
@@ -38,7 +39,6 @@ class Database
             if (!$result = mysqli_query($this->conn, $query)) {
                 echo mysqli_error($this->conn);
             }
-            $this->close();
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -54,10 +54,15 @@ class Database
         }
     }
 
-    private function close()
+    public function close()
     {
         if ($this->conn) {
             mysqli_close($this->conn);
         }
+    }
+
+    public function getInsertedId()
+    {
+      return isset($this->conn) ? mysqli_insert_id($this->conn) : false;
     }
 }

@@ -41,7 +41,7 @@
 
     <?php if(isset($project)): ?>
       <p class="lead">Edit project</p>
-    <form method="post" action="<?php echo BASE_URL;?>admin/doEdit" enctype="multipart/form-data">
+    <form method="post" action="<?php echo BASE_URL;?>admin/doEditProject" enctype="multipart/form-data">
       <div class="form-group">
         <input type="text" name="tbProjectName" value="" class="form-control" placeholder="Project Name"id="tbProjectName">
       </div>
