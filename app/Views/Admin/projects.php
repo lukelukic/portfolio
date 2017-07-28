@@ -30,7 +30,7 @@
             <td><?php echo $wk->picture->file; ?></td>
             <td><?php echo $wk->picture->alt; ?></td>
             <td><a class='btn btn-sm btn-warning' href="<?php echo BASE_URL ?>admin/editProject?id=<?php echo $wk->id; ?>">Edit</a></td>
-            <td><a class='btn btn-sm btn-danger' href="<?php echo BASE_URL ?>admin/deleteProject?id=<?php echo $wk->id; ?>">Delete</a></td>
+            <td><a class='btn btn-sm btn-danger delete' href="<?php echo BASE_URL ?>admin/deleteProject?id=<?php echo $wk->id; ?>">Delete</a></td>
          </tr>
        <?php endforeach; ?>
     </table>
@@ -142,7 +142,8 @@ $(".usrDelete").click(function(event) {
 <!-- Custom Theme JavaScript -->
 <script src="<?php echo BASE_URL; ?>files/js/sb-admin-2.js"></script>
 <script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/check.js">
-
+</script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/delete.js">
 </script>
 </body>
 

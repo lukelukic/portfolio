@@ -40,7 +40,7 @@
                    <td><?php echo $tm->picture; ?></td>
                    <td><?php echo $tm->alt; ?></td>
                    <td><a href="<?php echo BASE_URL; ?>admin/editMember?id=<?php echo $tm->id; ?>" class='btn btn-warning btn-sm'>Edit</a></td>
-                   <td><a href="<?php echo BASE_URL; ?>admin/deleteMember?id=<?php echo $tm->id; ?>" class='btn btn-danger btn-sm'>Delete</a></td>
+                   <td><a href="<?php echo BASE_URL; ?>admin/deleteMember?id=<?php echo $tm->id; ?>" class='btn btn-danger btn-sm delete'>Delete</a></td>
                  </tr>
                <?php endforeach; ?>
              <?php endif; ?>
@@ -184,7 +184,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo BASE_URL; ?>files/js/sb-admin-2.js"></script>
     <script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/check.js">
-
+    </script>
+    <script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/delete.js">
     </script>
 </body>
 
