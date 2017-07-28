@@ -12,12 +12,10 @@
 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 ">
   <table class="table table-hover table-striped table-bordered">
      <tr>
-
-       <th>Number</th>
        <th>Project Name</th>
        <th>Project Link</th>
        <th>Project Picture</th>
-       <th>Tags</th>
+       <th>Project Alt Attribute</th>
      </tr>
   </table>
 </div>
@@ -41,12 +39,9 @@
 
     <!-- Forma za dodavanje novog korisnika, prikazuje se uvek osim ako je prosledjen edit parametar -->
 
-    <!-- <?php if(isset($project)): ?> -->
+    <?php if(isset($project)): ?>
       <p class="lead">Edit project</p>
     <form method="post" action="<?php echo BASE_URL;?>admin/doEdit" enctype="multipart/form-data">
-      <div class="form-group">
-        <input type="text" name="tbNumber" value="" class="form-control" placeholder="Number" id="tbNumber">
-      </div>
       <div class="form-group">
         <input type="text" name="tbProjectName" value="" class="form-control" placeholder="Project Name"id="tbProjectName">
       </div>
@@ -58,9 +53,8 @@
         <input type="file" name="tbProjectPicture" value="" class="form-control" id="tbProjectPicture">
       </div>
       <div class="form-group">
-        <input type="checkbox" name="" value="">
+        <input type="text" name="tbAlt" value="" class="form-control" placeholder="Project Alt Attribute" id="tbProjectAlt">
       </div>
-        <p><strong>Project tags :</strong></p>
       <div class="form-group">
         <input type="submit" class="btn btn-warning" name="btnSubmit" value="Edit project" class="form-control" id="submitProject">
         <a href="<?php echo BASE_URL;?>admin/projects"><input type="button" name="" value="Cancel" class="btn btn-danger"></a>
@@ -71,12 +65,9 @@
 
     </div>
 
-    <!-- <?php else: ?> -->
+     <?php else: ?>
       <p class="lead">New project</p>
-    <form method="post" action="<?php echo BASE_URL;?>admin/doEdit" enctype="multipart/form-data">
-      <div class="form-group">
-        <input type="text" name="tbNumber" value="" class="form-control" placeholder="Number" id="tbNumber">
-      </div>
+    <form method="post" action="<?php echo BASE_URL;?>admin/addProject" enctype="multipart/form-data">
       <div class="form-group">
         <input type="text" name="tbProjectName" value="" class="form-control" placeholder="Project Name"id="tbProjectName">
       </div>
@@ -87,9 +78,8 @@
       <div class="form-group">
         <input type="file" name="tbProjectPicture" value="" class="form-control" id="tbProjectPicture">
       </div>
-      <p><strong>Project tags :</strong></p>
       <div class="form-group">
-        <input type="checkbox" name="" value="">
+        <input type="text" name="tbAlt" value="" class="form-control" placeholder="Project Alt Attribute" id="tbProjectAlt">
       </div>
       <div class="form-group">
         <input type="submit" class="btn btn-primary" name="btnSubmit" value="Add project" class="form-control" id="submitProject">
@@ -99,7 +89,7 @@
     <div id="feedback" class="hidden alert alert-danger ">
 
     </div>
-  <!-- <?php endif ?> -->
+   <?php endif ?>
 
 
 
