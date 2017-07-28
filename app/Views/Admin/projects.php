@@ -10,14 +10,31 @@
 
 
 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 ">
-  <table class="table table-hover table-striped table-bordered">
-     <tr>
-       <th>Project Name</th>
-       <th>Project Link</th>
-       <th>Project Picture</th>
-       <th>Project Alt Attribute</th>
-     </tr>
-  </table>
+  <?php if(isset($works)): ?>
+    <table class="table table-hover table-striped table-bordered">
+       <tr>
+         <th>#</th>
+         <th>Project Name</th>
+         <th>Project Link</th>
+         <th>Project Picture</th>
+         <th>Project Alt Attribute</th>
+         <th>Edit</th>
+         <th>Delete</th>
+       </tr>
+       <?php $rb=1; ?>
+       <?php foreach($works as $wk): ?>
+         <tr>
+           <td><?php echo $rb++; ?></td>
+            <td><?php echo $wk->name; ?></td>
+            <td><?php echo $wk->link ? $wk->link : "/"; ?></td>
+            <td><?php echo $wk->picture->file; ?></td>
+            <td><?php echo $wk->picture->alt; ?></td>
+            <td><a class='btn btn-sm btn-warning' href="<?php echo BASE_URL ?>admin/editProject?id=<?php echo $wk->id; ?>">Edit</a></td>
+            <td><a class='btn btn-sm btn-danger' href="<?php echo BASE_URL ?>admin/deleteProject?id=<?php echo $wk->id; ?>">Delete</a></td>
+         </tr>
+       <?php endforeach; ?>
+    </table>
+  <?php endif; ?>
 </div>
     <!-- /.row -->
 </div>
