@@ -4,7 +4,7 @@
 			<div id="port" class="portfolio-box">
 				<div class="container">
 					<div class="portfolio-head text-center">
-						<h4>portfolio</h4>
+						<h4>projects</h4>
 					</div>
 					<!---- start-portfolio-script----->
 					<script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/jquery.mixitup.min.js"></script>
@@ -47,11 +47,8 @@
 					</script>
 					<!----//End-portfolio-script----->
 					<ul id="filters" class="clearfix">
-						<li><span class="filter active" data-filter="app card icon logo web">All</span> /</li>
-						<li><span class="filter" data-filter="app">DESIGN</span> /</li>
-						<li><span class="filter" data-filter="card">PHOTOGRAPHY</span> /</li>
-						<li><span class="filter" data-filter="icon">VIDEO</span> /</li>
-						<li><span class="filter" data-filter="app">PRINT</span></li>
+						<li><span class="filter active" data-filter="app card icon logo web">BROWSE OUR PROJECTS</span> </li>
+
 					</ul>
 					<div id="portfoliolist">
 					<div class="portfolio logo1 mix_all port-big-grid" data-cat="logo" style="display: inline-block; opacity: 1;">
@@ -97,7 +94,7 @@
 		                </div>
 					</div>
 					<div class="clearfix"> </div>
-					<a class="load-ports" href="#">I want landing page</a>
+					<a class="load-ports" href="#">Request Project</a>
 				</div>
 
 			</div>
