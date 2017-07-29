@@ -1,4 +1,4 @@
-<div class="">
+<div id="contact">
 
 
     <!----------- Footer ------------>

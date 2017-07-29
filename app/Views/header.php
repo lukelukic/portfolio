@@ -26,7 +26,7 @@
 			<!---- header-info ---->
 			<div class="header-info text-center">
 				<div class="container">
-					<h1><span> </span><label>WE DEVELOP SOFTWARE</label> <span> </span></h1>
+					<h1><span> </span><label>we make SOFTWARE</label> <span> </span></h1>
 					<p>That makes Your bussiness grow.</p>
 					<a class="big-btn" href="#">Contact us</a>
 					<a class="down-arrow down-arrow-to scroll" href="#about"><span> </span></a>
