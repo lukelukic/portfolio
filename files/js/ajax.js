@@ -18,7 +18,7 @@ $(document).ready(function() {
   })
   .done(function(data) {
     //console.log("success");
-    alert(data);
+    
   $("#feedback").html(data);
 
   })
