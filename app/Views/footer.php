@@ -1,12 +1,24 @@
-<div id="contact">
+<footer class="footer-distributed">
+     <div class="container">
 
 
-    <!----------- Footer ------------>
-    <footer class="footer-bs">
-      <div class="container">
-        <div class="row">
-        	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-offset-4 col-md-offset-4 footer-nav animated fadeInUp">
-            	<form class="" action="index.html" method="post">
+			<div class="footer-left">
+
+				<h3>roughy<span>Coding</span></h3>
+
+
+
+				<p class="footer-company-name">roughyCoding &copy; 2017</p>
+
+
+
+			</div>
+
+			<div class="footer-right">
+
+				<p>Contact Us</p>
+
+				<form class="" action="index.html" method="post">
             	 <div class="form-group">
             	   <input type="text" name="mFirstName" value="" placeholder="First Name" class="form-control okvir" id="mFirstName">
             	 </div>
@@ -23,20 +35,16 @@
                  <input type="button" name="mSubmit" value="Submit" class=" form-control boja " id="mSubmit">
                </div>
             	</form>
-              <div id="feedback">
+							<div id="feedback">
 
               </div>
-            </div>
 
+			</div>
+		</div>
+		</footer>
+		<script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/ajax.js">
 
-            </div>
-        </div>
-      </div>
-    </footer>
+	 </script>
+	</body>
 
-</div>
- <script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/ajax.js">
-
- </script>
-</body>
 </html>
