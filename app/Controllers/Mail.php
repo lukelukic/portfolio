@@ -58,7 +58,7 @@ class Mail extends MainController
                     echo "<div class='alert alert danger'>Message field can't be empty.</div>";
                 }
             } else {
-              echo "<div class='panel panel-alert'>";
+              echo "<div class='alert alert-danger'>";
               foreach($validator->getErrorMessages() as $err) {
                   echo "<p>$err</p>";
               }
