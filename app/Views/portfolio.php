@@ -3,53 +3,10 @@
 			<!--- Portfolio --->
 			<div id="port" class="portfolio-box">
 				<div class="container">
-					<div class="portfolio-head text-center">
-						<h4>projects</h4>
+					<div class="about-head text-center">
+						<h3>latest <span> projects</span></h3>
 					</div>
-					<!---- start-portfolio-script----->
-					<script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/jquery.mixitup.min.js"></script>
-					<script type="text/javascript">
-						$(function () {
-							var filterList = {
-								init: function () {
 
-									// MixItUp plugin
-									// http://mixitup.io
-									$('#portfoliolist').mixitup({
-										targetSelector: '.portfolio',
-										filterSelector: '.filter',
-										effects: ['fade'],
-										easing: 'snap',
-										// call the hover effect
-										onMixEnd: filterList.hoverEffect()
-									});
-
-								},
-								hoverEffect: function () {
-									// Simple parallax effect
-									$('#portfoliolist .portfolio').hover(
-										function () {
-											$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-											$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
-										},
-										function () {
-											$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-											$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-										}
-									);
-
-								}
-
-							};
-							// Run the show!
-							filterList.init();
-						});
-					</script>
-					<!----//End-portfolio-script----->
-					<ul id="filters" class="clearfix">
-						<li><span class="filter active" data-filter="app card icon logo web">BROWSE OUR PROJECTS</span> </li>
-
-					</ul>
 					<div id="portfoliolist">
 					<div class="portfolio logo1 mix_all port-big-grid" data-cat="logo" style="display: inline-block; opacity: 1;">
 						<div class="portfolio-wrapper">

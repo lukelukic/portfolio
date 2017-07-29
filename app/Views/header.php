@@ -5,7 +5,7 @@
 					<div class="top-header">
 						<div class="container">
 						<div class="logo">
-							<a href="#"><img src="<?php echo BASE_URL; ?>files/images/logo.png" title="Dasiy" /></a>
+							<p class="lead"><a href="<?php echo BASE_URL; ?>"><span>roughly</span><span>Coding.rs</span></a></p>
 						</div>
 						<!----start-top-nav---->
 						 <nav class="top-nav">
@@ -26,9 +26,9 @@
 			<!---- header-info ---->
 			<div class="header-info text-center">
 				<div class="container">
-					<h1><span> </span><label>Clients</label> in your business<span> </span></h1>
-					<p>Your clients on the internet. Learn how to receive them.</p>
-					<a class="big-btn" href="#">I want clients</a>
+					<h1><span> </span><label>WE DEVELOP SOFTWARE</label> <span> </span></h1>
+					<p>That makes Your bussiness grow.</p>
+					<a class="big-btn" href="#">Contact us</a>
 					<a class="down-arrow down-arrow-to scroll" href="#about"><span> </span></a>
 					<label class="mouse-divice"> </label>
 				</div>
@@ -36,3 +36,20 @@
 			</div>
 			<div class="clearfix"> </div>
 			<!---- header-info ---->
+			<script type="text/javascript">
+				$(".logo").hover(function() {
+					$(".logo span:first").css({
+						'color': '#fff'
+					});
+					$(".logo span:nth-child(2)").css({
+						'color': '#FC645F'
+					});
+				}, function() {
+					$(".logo span:first").css({
+						'color': '#FC645F'
+					});
+					$(".logo span:nth-child(2)").css({
+						'color': '#FFF'
+					});
+				});
+			</script>

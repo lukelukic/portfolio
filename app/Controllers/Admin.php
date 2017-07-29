@@ -25,9 +25,29 @@ class Admin extends sys\MainController
         $coll = new Models\Work_Collection();
         $coll->selectAllFromDb(new Db());
         $data['works'] = $coll->getItems();
-        var_dump($data['works']);
         $this->loadView("Admin/navigation");
         $this->loadView("Admin/projects", $data);
+    }
+
+    public function deleteProject()
+    {
+      if (isset($_REQUEST['id'])) {
+          //Dohvatanje work-a iz baze i postavljanje id-a
+          $work = new Models\Work();
+          $work->id = $_REQUEST['id'];
+          if ($work->deleteFromDb(new sys\Libraries\Database())) {
+              //Ako je brisanje uspesno, brise se i slika
+              unlink($_SERVER['DOCUMENT_ROOT'] . "/portfolio/files/images/projects/" . $_REQUEST['picture']);
+              $_SESSION['flash']['delSuccess'] = "Project successfully deleted.";
+              redirect("admin/projects");
+          } else {
+              $_SESSION['flash']['delError'] = "Problem with deleting.";
+              redirect("admin/projects");
+          }
+      } else {
+          $_SESSION['flash']['delError'] = "No project selected.";
+          redirect("admin/projects");
+      }
     }
 
     public function addProject()

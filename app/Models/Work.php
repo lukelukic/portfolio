@@ -18,10 +18,12 @@ class Work implements sys\Interfaces\IDbItem
         //Dohvatanje id-a slike posle unosa
         $this->picture->id = $db->getInsertedId();
         //Unos rada
+        $this->picture->id;
         $query = "INSERT INTO works (name,link) VALUES ('$this->name', '$this->link');";
-        //Ukoliko je unos uspesan, unosi se u veznu tabelu
+        // //Ukoliko je unos uspesan, unosi se u veznu tabelu
         if ($db->executeQuery($query)) {
             $this->id = $db->getInsertedId();
+            echo $this->id . "</br>";
             //Unos u veznu tabelu
             $query = "INSERT INTO work_to_picture (work_id, picture_id) VALUES ($this->id," . $this->picture->id . ");";
             return $db->executeQuery($query);
@@ -34,13 +36,18 @@ class Work implements sys\Interfaces\IDbItem
     {
         //Prvo se brise iz vezne tabele, pa iz slike i iz rada
         $query = "SELECT * FROM work_to_picture WHERE work_id = $this->id;";
-        $row = mysqli_fetch_row($db->executeQuery($query));
-        $this->picture_id = $row['picture_id'];
+        $result = $db->executeQuery($query);
+        $r = mysqli_fetch_array($result);
+
+        $this->picture = new Picture();
+        $this->picture->id = $r['picture_id'];
         $query = "DELETE FROM work_to_picture WHERE work_id = $this->id;";
+
         if ($db->executeQuery($query)) {
-            $query = "DELETE FROM picture WHERE id = $this->picture->id;";
-            if ($query) {
+            $query = "DELETE FROM picture WHERE id = " . $this->picture->id . ";";
+            if ($db->executeQuery($query)) {
                 $query = "DELETE FROM works WHERE id = $this->id;";
+                return $db->executeQuery($query);
             } else {
                 return false;
             }

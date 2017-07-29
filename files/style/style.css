@@ -76,13 +76,19 @@ body a{
 }
 .logo{
 	float: left;
-	margin-top: 0.6em;
+	margin-top: 1.4em;
 }
+.logo span:first-child {
+  color : #FC645F;
+}
+.logo span {
+  color : #fff;
+}
+
+
 .logo a{
-	color: #303030;
 	font-weight: 200;
-	text-transform: uppercase;
-	font-size: 2.5em;
+	font-size: 1em;
 }
 .logo a:hover{
 	text-decoration:none;
@@ -153,7 +159,7 @@ nav a#pull {
 }
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
-	nav { 
+	nav {
   		height: auto;
   		float:none;
   	}
@@ -361,14 +367,16 @@ label.mouse-divice{
 }
 .about-grid span{
 	width: 101px;
-	height: 116px;
+
 	display: inline-block;
-	background: url(../images/about-icons.png) no-repeat 0px 0px;
+	/*background: url(../images/about-icons.png) no-repeat 0px 0px;*/
 }
 .about-grid p{
 	color:#ADADAD;
 	font-family:'open_sanslight';
 }
+
+
 .about-grid span.about-icon2{
 	background-position: -249px 0px;
 }
@@ -491,9 +499,9 @@ a.p-down-arrow span {
 }
 .wedo-head h3 span{
 	color:#FC635E;
-} 
+}
 a.wedobtn{
-		
+
 }
 .wedo-left h4{
 	color:#868686;
@@ -547,7 +555,7 @@ a.w-down-arrow span {
 	position:relative;
 }
 .advertising-right{
-	
+
 }
 .advertising-right h4{
 	color:#868686;
@@ -584,7 +592,7 @@ a.ad-down-arrow span {
 	position:relative;
 }
 .marketing-left {
-	
+
 }
 .marketing-left h4{
 	color:#868686;
@@ -618,7 +626,7 @@ a.mr-down-arrow span {
 	padding:2em 0 3em;
 }
 .portfolio-head{
-	
+
 }
 .portfolio-head h4{
 	color: #868686;
@@ -667,7 +675,7 @@ a.mr-down-arrow span {
 		float:left;
 		overflow:hidden;
 		margin: 0 2% 2% 0;
-	}	
+	}
 	#portfoliolist .portfolio:nth-child(3),#portfoliolist .portfolio:nth-child(6){
 		margin: 0 0% 2% 0;
 	}
@@ -704,7 +712,7 @@ a.mr-down-arrow span {
 			z-index:500;
 			padding:5px 8px;
 		}
-			
+
 			.portfolio .text-category {
 				display:block;
 				font-size:9px;
@@ -1001,7 +1009,7 @@ span.port-mouse{
 	text-align:left;
 }
 .test-people-name{
-	margin-top:3.5em;	
+	margin-top:3.5em;
 }
 .test-people-name h4{
 	color:#818181;
@@ -1096,7 +1104,7 @@ p.copy-right a:hover{
 		height: 244px;
 		bottom: -33.5%;
 		left: 58.3%;
-	}	
+	}
 	a.down-arrow span {
 		bottom: -27%;
 	}
@@ -1116,7 +1124,7 @@ p.copy-right a:hover{
 		height: 244px;
 		bottom: -35.5%;
 		left: 60.3%;
-	}	
+	}
 	a.down-arrow span {
 		bottom: -27%;
 	}
@@ -1181,7 +1189,7 @@ p.copy-right a:hover{
 		height: 192px;
 		bottom: -26.5%;
 		left: 61.8%;
-	}	
+	}
 	a.down-arrow span {
 		bottom: -7%;
 	}
@@ -1304,7 +1312,7 @@ p.copy-right a:hover{
 	}
 	label.mouse-divice {
 		display: none;
-	}	
+	}
 	a.down-arrow span {
 		bottom: -7%;
 	}
@@ -1442,7 +1450,7 @@ p.copy-right a:hover{
 	}
 	label.mouse-divice {
 		display: none;
-	}	
+	}
 	a.down-arrow span {
 		bottom: -7%;
 	}
@@ -1627,7 +1635,7 @@ p.copy-right a:hover{
 	}
 	label.mouse-divice {
 		display: none;
-	}	
+	}
 	a.down-arrow span {
 		bottom: -7%;
 		left: 46%;

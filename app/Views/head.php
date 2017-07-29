@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Daisy Website Template | Home :: w3layouts</title>
+		<title>roughlyCoding | Welcome</title>
 		<link href="<?php echo BASE_URL; ?>vendor/components/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+		<link href="<?php echo BASE_URL; ?>vendor/components/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css' />
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="<?php echo BASE_URL; ?>vendor/components/jquery/jquery.min.js"></script>
 		 <!-- Custom Theme files -->

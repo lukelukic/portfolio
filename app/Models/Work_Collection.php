@@ -25,7 +25,7 @@ class Work_Collection extends sys\DbCollection
 
     public function selectAllFromDb(sys\Libraries\Database $db)
     {
-      $query = "SELECT DISTINCT * FROM works INNER JOIN work_to_picture ON work_to_picture.work_id = works.id
+      $query = "SELECT DISTINCT works.id, works.name,works.link, picture.file,picture.alt, picture.date_created FROM works INNER JOIN work_to_picture ON work_to_picture.work_id = works.id
                 INNER JOIN picture ON picture.id = work_to_picture.picture_id ORDER BY picture.date_created DESC;";
       $works = $db->executeQuery($query);
       if($works) {
