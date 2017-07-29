@@ -15,9 +15,10 @@ class FormValidation
       'password' => "/^(?=.*[0-9])(?=.*[a-z])(\S+)$/i",
       'url' => "^(?:https?://)?(?:[a-z0-9-]+\.)*((?:[a-z0-9-]+\.)[a-z]+)",
       'ip' => '/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\z/',
-      'name' => "/^[A-Z][a-z]{1,15}$/",
+      'name' => "/^[\p{Lu}[\p{Ll}]{1,15}$/u",
       'image' => "/^.*\.(jpg|jpeg|png|gif)$/",
-      'fullName' => '/^[A-Z][a-z]{3,15}(\s[A-Z][a-z]{3,15})*$/'
+      'fullName' => '/^[A-Z][a-z]{3,15}(\s[A-Z][a-z]{3,15})*$/',
+      'phone' => '/^(\+\d{1,3}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{3,4}$/'
       );
     private $validationErrors = array();
     private $valid = true;
@@ -31,19 +32,24 @@ class FormValidation
     public function checkCommon($type, $value, $errorMessage)
     {
         switch ($type) {
+          case 'phone':
+              if (!preg_match($this->regexes['phone'], $value)) {
+                  array_push($this->validationErrors, $errorMessage);
+              }
+              break;
             case 'name':
                 if (!preg_match($this->regexes['name'], $value)) {
-                array_push($this->validationErrors, $errorMessage);
+                    array_push($this->validationErrors, $errorMessage);
                 }
                 break;
             case 'fullName':
                 if (!preg_match($this->regexes['fullName'], $value)) {
-                array_push($this->validationErrors, $errorMessage);
+                    array_push($this->validationErrors, $errorMessage);
                 }
                 break;
             case 'image':
                 if (!preg_match($this->regexes['image'], $value)) {
-                array_push($this->validationErrors, $errorMessage);
+                    array_push($this->validationErrors, $errorMessage);
                 }
                 break;
             case 'email':
@@ -72,7 +78,6 @@ class FormValidation
                 }
                 break;
             default:
-                throw new Exception("Requested type not recognized.");
                 break;
       }
     }
