@@ -43,7 +43,7 @@ class Mail extends MainController
                     $msg = "<p><strong>First Name: </strong>$firstName</p>";
                     $msg .= "<p><strong>Email: </strong>$email</p>";
                     if ($phone) $msg .= "<p><strong>Phone: </strong>$phone</p>";
-                    $msg .= "<p>$message</p>";
+                    $msg .= "<div class='alert alert-danger'>$message</div>";
 
                     //Podesavanje heder-a
                     $headers = "From: $email \r\n";
