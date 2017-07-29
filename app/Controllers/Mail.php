@@ -46,19 +46,23 @@ class Mail extends MainController
                     $msg .= "<p>$message</p>";
 
                     //Podesavanje heder-a
-                    $headers = "From: lazar.komlenski@gmail.com \r\n";
+                    $headers = "From: $email \r\n";
                     $headers .= "Reply-To: $email \r\n";
                     $headers .= "MIME-Version: 1.0\r\n";
                     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-                    if(mail($email,"rouhlyCoding Contact Form", $msg, $headers)) {
-                      echo "Poslato";
+                    if(mail('luka.lukic.28.14@ict.edu.rs',"rouhlyCoding Contact Form", $msg, $headers)) {
+                      echo "<div class='alert alert-info'>Message sent! Thanks for contacting us.</div>";
                     }
                 } else {
-                    echo "<p class='danger'>Message field can't be empty.</p>";
+                    echo "<div class='alert alert danger'>Message field can't be empty.</div>";
                 }
             } else {
-              var_dump($validator->getErrorMessages());
+              echo "<div class='panel panel-alert'>";
+              foreach($validator->getErrorMessages() as $err) {
+                  echo "<p>$err</p>";
+              }
+              echo '</div>';
             }
         }
     }
