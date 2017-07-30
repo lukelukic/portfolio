@@ -1,2 +1,2 @@
 <?php
-include 'system/routes.php';
+include 'portfolio/system/routes.php';

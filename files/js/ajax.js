@@ -6,7 +6,7 @@ $(document).ready(function() {
   var message = document.getElementById("mMessage").value;
   var fidbek = document.getElementById("feedback");
   $.ajax({
-    url: 'http://localhost/portfolio/mail',
+    url: 'mail',
     type: 'POST',
     data: {
       mFirstName: firstName,
@@ -32,7 +32,7 @@ $(document).ready(function() {
 }
 
 $(document).$.ajaxStart(function() {
-  
+
 });
 
 
