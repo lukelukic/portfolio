@@ -1,4 +1,5 @@
-<form class="form-control" action="<?php echo BASE_URL; ?>/login/login" method="POST">
+
+<form class="form-control" action="<?php echo BASE_URL; ?>login/login" method="POST">
   <div class="row">
     <div class="col-md-12">
       <div class="form-group">
@@ -19,3 +20,4 @@
     </div>
   </div>
 </form>
+<link href="<?php echo BASE_URL; ?>files/style/style.css" rel='stylesheet' type='text/css' />
