@@ -8,8 +8,15 @@ use portfolio\system\Libraries\Database as Db;
 
 class Admin extends sys\MainController
 {
+    private function authorize()
+    {
+      if (!isset($_SESSION['username'])) {
+        redirect("home");
+      }
+    }
     public function index($data = null)
     {
+        $this->authorize();
         $tm = new Models\Team_Member();
         $coll = new Models\Team_Members_Collection();
         $db = new sys\Libraries\Database();
@@ -22,6 +29,7 @@ class Admin extends sys\MainController
     //Stranica za administriranje projekata
     public function projects($data = null)
     {
+        $this->authorize();
         $coll = new Models\Work_Collection();
         $coll->selectAllFromDb(new Db());
         $data['works'] = $coll->getItems();
@@ -31,23 +39,23 @@ class Admin extends sys\MainController
 
     public function deleteProject()
     {
-      if (isset($_REQUEST['id'])) {
-          //Dohvatanje work-a iz baze i postavljanje id-a
+        if (isset($_REQUEST['id'])) {
+            //Dohvatanje work-a iz baze i postavljanje id-a
           $work = new Models\Work();
-          $work->id = $_REQUEST['id'];
-          if ($work->deleteFromDb(new sys\Libraries\Database())) {
-              //Ako je brisanje uspesno, brise se i slika
+            $work->id = $_REQUEST['id'];
+            if ($work->deleteFromDb(new sys\Libraries\Database())) {
+                //Ako je brisanje uspesno, brise se i slika
               unlink($_SERVER['DOCUMENT_ROOT'] . "/portfolio/files/images/projects/" . $_REQUEST['picture']);
-              $_SESSION['flash']['delSuccess'] = "Project successfully deleted.";
-              redirect("admin/projects");
-          } else {
-              $_SESSION['flash']['delError'] = "Problem with deleting.";
-              redirect("admin/projects");
-          }
-      } else {
-          $_SESSION['flash']['delError'] = "No project selected.";
-          redirect("admin/projects");
-      }
+                $_SESSION['flash']['delSuccess'] = "Project successfully deleted.";
+                redirect("admin/projects");
+            } else {
+                $_SESSION['flash']['delError'] = "Problem with deleting.";
+                redirect("admin/projects");
+            }
+        } else {
+            $_SESSION['flash']['delError'] = "No project selected.";
+            redirect("admin/projects");
+        }
     }
 
     public function addProject()

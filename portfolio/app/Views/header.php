@@ -14,6 +14,10 @@
 								<li class="active"><a href="#port" class="scroll">portfolio</a></li>
 								<li><a href="#process" class="scroll">Process</a></li>
 								<li><a href="#team" class="scroll">team</a></li>
+								<?php if(isset($_SESSION['username'])): ?>
+									<li><a href="<?php echo BASE_URL; ?>admin" >Admin</a></li>
+									<li><a href="<?php echo BASE_URL; ?>login/logout" >Logout</a></li>
+								<?php endif; ?>
 							</ul>
 							<a href="#" id="pull"><img src="<?php echo BASE_URL; ?>files/images/nav-icon.png" alt="navigation" title="menu" /></a>
 						</nav>
