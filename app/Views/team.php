@@ -10,7 +10,7 @@
         <?php foreach ($team_members as $key => $value):?>
           <div class="col-md-4">
             <div class="team-member">
-              <img src="<?php echo BASE_URL; ?>files/images/<?php echo $value->picture; ?>" class=" img-thumbnail" height="200" title="<?php echo $value->alt; ?>" />
+              <img src="<?php echo BASE_URL; ?>files/images/<?php echo $value->picture; ?>" class=" img-thumbnail" height="200" title="<?php echo $value->firstName; ?>" alt="<?php echo $value->alt; ?>" />
               <h5><span><?php  echo $value->firstName; ?> </span><?php  echo $value->lastName; ?></h5>
               <label><?php  echo $value->position; ?></label>
               <ul class="unstyled-list">

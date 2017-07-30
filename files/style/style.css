@@ -5,6 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /*--- importing-fonts -----*/
+
 @font-face {
     font-family: 'open_sanssemibold';
     src: url('../fonts/opensans_semibold_macroman/OpenSans-Semibold-webfont.eot');
@@ -66,6 +67,9 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
+
+
 /*-----start-header----*/
 .bg{
 	background: url(../images/bg.jpg) no-repeat 0px 0px;
@@ -260,7 +264,7 @@ nav a#pull {
 .header-info h1 label{
 	color:#FC645F;
 }
-.header-info p{
+.header-info p, .header-info h3{
 	color: #fff;
 	margin: 0;
 	font-size: 1.4em;
@@ -1857,11 +1861,10 @@ p.copy-right a:hover{
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
-	font: bold 16px sans-serif;
+
 	text-align: left;
 
-	padding: 50px 60px 40px;
-	margin-top: 80px;
+	padding: 30px 40px 20px;
 	overflow: hidden;
 }
 
@@ -1934,12 +1937,7 @@ p.copy-right a:hover{
 	float: right;
 }
 
-.footer-distributed .footer-right p{
-	display: inline-block;
-	vertical-align: top;
-	margin: 15px 42px 0 0;
-	color: #ffffff;
-}
+
 
 /* The contact form */
 
@@ -1963,7 +1961,6 @@ p.copy-right a:hover{
 	color:  #d1d2d2;
 
 	width: 400px;
-	padding: 18px;
 }
 
 .footer-distributed ::-webkit-input-placeholder {
@@ -1981,8 +1978,8 @@ p.copy-right a:hover{
 
 
 .footer-distributed form input{
-	height: 55px;
-	margin-bottom: 15px;
+
+
 }
 
 .footer-distributed form textarea{
@@ -2008,9 +2005,14 @@ p.copy-right a:hover{
 		font: bold 14px sans-serif;
 	}
 
-	.footer-distributed .footer-company-name{
+	.footer-distributed .footer-company-name {
 		font-size: 12px;
+
 	}
+
+  .nopadding {
+    padding: 0 !important;
+  }
 
 	.footer-distributed form input,
 	.footer-distributed form textarea{

@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-define('BASE_URL', 'http://localhost/portfolio/');
+define('BASE_URL', 'http://localhost/roughlycoding/');
 
 spl_autoload_register(function ($class) {
     $file = str_replace('\\', '/', $class) . '.php';

@@ -2,13 +2,16 @@
      <div class="container">
 
 
-			<div class="footer-left">
+			<div class="footer-left col-md-6">
 
-				<h3>roughy<span>Coding</span></h3>
+        <div class="logo">
+          <p class="lead"><a href="<?php echo BASE_URL; ?>"><span>roughly</span><span>Coding.rs</span></a></p>
+        </div>
 
+          <p class="footer-company-name col-md-12">
 
+          roughyCoding 2017 | &copy; All Rights Reserved </p>
 
-				<p class="footer-company-name">roughyCoding &copy; 2017</p>
 
 
 
@@ -16,7 +19,7 @@
 
 			<div class="footer-right">
 
-				<p>Contact Us</p>
+				<p class='text-danger'>Contact Us</p>
 
 				<form class="" action="index.html" method="post">
             	 <div class="form-group">

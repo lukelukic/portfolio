@@ -18,7 +18,7 @@ $(document).ready(function() {
   })
   .done(function(data) {
     //console.log("success");
-    
+
   $("#feedback").html(data);
 
   })
@@ -30,4 +30,10 @@ $(document).ready(function() {
   });
 
 }
+
+$(document).$.ajaxStart(function() {
+  
+});
+
+
 });

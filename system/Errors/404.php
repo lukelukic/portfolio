@@ -2,11 +2,7 @@
 <html>
 <head>
   <title>404</title>
-<style media="screen">
-.error-template {padding: 40px 15px;text-align: center;}
-.error-actions {margin-top:15px;margin-bottom:15px;}
-.error-actions .btn { margin-right:10px; }
-</style>
+<link rel="stylesheet" href="<?php echo BASE_URL ?>files/style/core.css">
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/components/bootstrap/css/bootstrap.css" media="screen">
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/components/font-awesome/css/font-awesome.css" media="screen">
 </link>

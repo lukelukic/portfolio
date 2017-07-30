@@ -15,10 +15,10 @@
   <div class="container">
     <div class="about-head text-center">
       <h3>our <span>process</span></h3>
-      <p>Daisy is sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum</p>
+      <p>We believe that clear communication is key to successfull cooperation. Here are the steps we take working on Your project.</p>
     </div>
     <div class="process-grid text-center">
-      <img src="<?php echo BASE_URL; ?>files/images/process.png" title="process" />
+      <img src="<?php echo BASE_URL; ?>files/images/process.png" alt="project progress" title="process" />
       <a class="p-down-arrow down-arrow-to scroll" href="#wedo"><span> </span></a>
     </div>
   </div>

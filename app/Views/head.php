@@ -1,13 +1,22 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
-		<title>roughlyCoding | Welcome</title>
+		<title>roughlyCoding | Software development</title>
+		<meta name="description" content="roughlyCoding.rs is a software company primary dedicated to web and desktop applications, database and SEO optimization.">
+		<meta name="author" content="Luka Lukic">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Website, Software, Development, Desktop, roughlyCoding, Database, SEO, Web" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="Robots" content="index,follow">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<!-- Styles -->
 		<link href="<?php echo BASE_URL; ?>vendor/components/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 		<link href="<?php echo BASE_URL; ?>vendor/components/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css' />
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="<?php echo BASE_URL; ?>vendor/components/jquery/jquery.min.js"></script>
 		 <!-- Custom Theme files -->
 		<link href="<?php echo BASE_URL; ?>files/style/style.css" rel='stylesheet' type='text/css' />
+		<link rel="shortcut icon" href="<?php echo BASE_URL ?>files/images/favicon.png" />
    		 <!-- Custom Theme files -->
    		  <!---- start-smoth-scrolling---->
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>files/js/move-top.js"></script>
@@ -43,5 +52,14 @@
 			});
 		</script>
 		<!----//End-top-nav-script---->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+		  ga('create', 'UA-103595915-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
 	</head>
