@@ -5,7 +5,7 @@ define('BASE_URL', 'http://localhost/roughlycoding/');
 
 spl_autoload_register(function ($class) {
     $file = str_replace('\\', '/', $class) . '.php';
-    $file = $_SERVER["DOCUMENT_ROOT"] . '/' . $file;
+    $file = $_SERVER["DOCUMENT_ROOT"] . '/roughlycoding/' . $file;
     if (file_exists($file)) {
         if (is_readable($file)) {
             require_once $file;

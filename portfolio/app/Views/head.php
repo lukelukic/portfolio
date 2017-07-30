@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>roughlyCoding | Software development</title>
+		<title>roughlyCoding.rs | Applications Development</title>
 		<meta name="description" content="roughlyCoding.rs is a software company primary dedicated to web and desktop applications, database and SEO optimization.">
 		<meta name="author" content="Luka Lukic">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

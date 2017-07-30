@@ -17,10 +17,12 @@ $(document).ready(function() {
     }
   })
   .done(function(data) {
-    //console.log("success");
 
   $("#feedback").html(data);
-
+    document.getElementById("mFirstName").value = "";
+    document.getElementById("mPhoneNumber").value = "";
+    document.getElementById("mEmail").value = "";
+    document.getElementById("mMessage").value = "";
   })
   .fail(function() {
     console.log("error");
@@ -28,12 +30,32 @@ $(document).ready(function() {
   .always(function() {
     console.log("complete");
   });
+};
 
-}
+//skroling
+  $(window).scroll(function(){
+    currentHeight = $(document).scrollTop();
+    if(currentHeight < 100){
+      $("#hidden-arrow").hide("400");
+    }else{
+      $("#hidden-arrow").show("400");
+    }
+  });
 
-$(document).$.ajaxStart(function() {
+//send kruzic
+  $(document).ajaxStart(function() {
+    $("#mSubmit").html("<i class='fa fa-circle-o-notch fa-spin'></i>");
+  });
+  $(document).ajaxStop((function() {
+    $("#mSubmit").html("Send");
+  }));
 
-});
-
+//send tooltip
+  $(function(){
+    $("#mFirstName").tooltip();
+    $("#mPhoneNumber").tooltip();
+    $("#mEmail").tooltip();
+    $("#mMessage").tooltip();
+  });
 
 });

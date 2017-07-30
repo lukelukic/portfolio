@@ -12,9 +12,8 @@
 							<ul class="top-nav">
 								<li><a href="#about" class="scroll">About</a></li>
 								<li class="active"><a href="#port" class="scroll">portfolio</a></li>
-								<li><a href="#wedo" class="scroll">wedo</a></li>
+								<li><a href="#process" class="scroll">Process</a></li>
 								<li><a href="#team" class="scroll">team</a></li>
-								<li><a href="#contact" class="scroll">Contact</a></li>
 							</ul>
 							<a href="#" id="pull"><img src="<?php echo BASE_URL; ?>files/images/nav-icon.png" alt="navigation" title="menu" /></a>
 						</nav>
@@ -28,7 +27,7 @@
 				<div class="container">
 					<h1><span> </span><label>we make SOFTWARE</label> <span> </span></h1>
 					<h3>That makes Your bussiness grow.</h3>
-					<a class="big-btn" href="#">Contact us</a>
+					<a class="big-btn" href="#" data-toggle="modal" data-target="#contact">Contact us</a>
 					<a class="down-arrow down-arrow-to scroll" href="#about"><span> </span></a>
 					<label class="mouse-divice"> </label>
 				</div>
